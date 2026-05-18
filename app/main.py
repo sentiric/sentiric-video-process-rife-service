@@ -1,7 +1,6 @@
 import asyncio
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.core.config import settings
 from app.core.logging_utils import setup_logging
 from app.core.engine import rife_engine
 from app.grpc_server import serve_grpc

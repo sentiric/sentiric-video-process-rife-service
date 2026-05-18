@@ -1,11 +1,8 @@
 [tool.poetry]
 name = "sentiric-video-process-rife-service"
 version = "1.0.0"
-description = "Sentiric Expert Engine"
+description = "Sentiric Video Refinement Engine"
 authors = ["Sentiric Team"]
 license = "AGPLv3"
-readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
-[tool.mypy]
-ignore_missing_imports = true

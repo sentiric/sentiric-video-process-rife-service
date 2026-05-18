@@ -14,7 +14,10 @@ def setup_logging(service_name):
         }
         event_dict["trace_id"] = event_dict.get("trace_id", None)
         event_dict["span_id"] = event_dict.get("span_id", None)
+        
+        # Log mesajını 'message' anahtarına alıyoruz
         event_msg = event_dict.pop("event", "LOG_EVENT")
+        # 'event_id' ile gelen teknik kimliği 'event' anahtarına taşıyoruz (Multiple values hatasını önler)
         event_dict["event"] = event_dict.get("event_id", "LOG_EVENT")
         event_dict.pop("event_id", None)
         event_dict["message"] = event_msg

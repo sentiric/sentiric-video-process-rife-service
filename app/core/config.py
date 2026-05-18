@@ -4,7 +4,7 @@ class Settings:
     APP_NAME = "Sentiric RIFE Video Processor"
     APP_VERSION = "1.0.0"
     ENV = os.getenv("ENV", "production")
-    DEVICE = "cuda"
+    DEVICE = os.getenv("VIDEO_SERVICE_DEVICE", "cuda")
     
     HTTP_PORT = int(os.getenv("RIFE_SERVICE_HTTP_PORT", "16150"))
     GRPC_PORT = int(os.getenv("RIFE_SERVICE_GRPC_PORT", "16151"))
@@ -12,8 +12,8 @@ class Settings:
 
     # mTLS
     GRPC_TLS_CA_PATH = os.getenv("GRPC_TLS_CA_PATH", "/sentiric-certificates/certs/ca.crt")
-    CERT_PATH = "/sentiric-certificates/certs/video-process-rife-service-chain.crt"
-    KEY_PATH = "/sentiric-certificates/certs/video-process-rife-service.key"
+    CERT_PATH = os.getenv("RIFE_SERVICE_CERT_PATH", "/sentiric-certificates/certs/video-process-rife-service-chain.crt")
+    KEY_PATH = os.getenv("RIFE_SERVICE_KEY_PATH", "/sentiric-certificates/certs/video-process-rife-service.key")
 
     # Storage & MQ
     S3_ENDPOINT = os.getenv("BUCKET_ENDPOINT_URL", "http://minio:9000")
